@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="skybase:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/skybase_jar</output-path>
-    <root id="archive" name="skybase.jar">
-      <element id="module-output" name="skybase" />
-      <element id="extracted-dir" path="$USER_HOME$/.sbt/boot/scala-2.12.4/lib/scala-library.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
