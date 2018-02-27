@@ -17,5 +17,10 @@ class SkybaseClientIntegrationTests extends FunSuite {
 
     // assert
     assert(result == 123)
+
+    val deleteFutureResult = client.delete("test")
+
+    val deleteResult = Await.result(deleteFutureResult, 10 seconds)
+    assert(deleteResult == akka.actor.Status.Success)
   }
 }

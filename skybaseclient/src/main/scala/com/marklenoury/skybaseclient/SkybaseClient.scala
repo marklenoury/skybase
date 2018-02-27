@@ -5,7 +5,7 @@ import akka.util.Timeout
 
 import scala.concurrent.duration._
 import akka.pattern.ask
-import com.marklenoury.skybase.common.messages.{GetRequest, SetRequest}
+import com.marklenoury.skybase.common.messages.{GetRequest, SetRequest, DeleteRequest}
 
 class SkybaseClient(remoteAddress: String) {
   private implicit val timeout = Timeout(2 seconds)
@@ -20,5 +20,9 @@ class SkybaseClient(remoteAddress: String) {
 
   def get(key: String) = {
     this.remoteDb ? GetRequest(key)
+  }
+
+  def delete(key: String) = {
+    this.remoteDb ? DeleteRequest(key)
   }
 }
